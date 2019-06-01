@@ -1,5 +1,7 @@
 <template>
   <span>
+    <publish-content-vue></publish-content-vue>
+
     <card-content-vue
       profile="https://materializecss.com/images/yuna.jpg"
       name="Maria"
@@ -18,6 +20,7 @@
 <script>
 import CardContentVue from '@/components/social/CardContentVue'
 import CardDetailsVue from '@/components/social/CardDetailsVue'
+import PublishContentVue from '@/components/social/PublishContentVue'
 
 export default {
   name: 'Home',
@@ -27,7 +30,8 @@ export default {
   },
   components: {
     CardContentVue,
-    CardDetailsVue
+    CardDetailsVue,
+    PublishContentVue
   }
 }
 </script>
