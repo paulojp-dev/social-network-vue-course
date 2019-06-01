@@ -1,9 +1,9 @@
 <template>
   <div>
     <header>
-      <nav-bar-vue logo="Social" url="#/" color="blue">
-        <li><a href="#/">Home</a></li>
-        <li><a href="#/login">Login</a></li>
+      <nav-bar-vue logo="Social" url="/" color="blue">
+        <li><router-link to="/">Home</router-link></li>
+        <li><router-link to="/login">Login</router-link></li>
       </nav-bar-vue>
     </header>
 
