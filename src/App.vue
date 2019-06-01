@@ -1,60 +1,11 @@
 <template>
-  <div>
-    <header>
-      <nav-bar-vue logo="Social" url="#" color="blue"></nav-bar-vue>
-    </header>
-
-    <main>
-      <div class="container">
-        <div class="row">
-          <grid-vue size="3">
-
-            <card-menu-vue>
-              <div class="row valign-wrapper">
-                <grid-vue size="4">
-                  <img src="https://materializecss.com/images/yuna.jpg" alt="" class="circle responsive-img">
-                  <!-- notice the "circle" class -->
-                </grid-vue>
-
-                <grid-vue size="9">
-                  <span class="black-text">
-                  <h5>Usuário</h5>
-                  desc.
-                </span>
-                </grid-vue>
-              </div>
-            </card-menu-vue>
-
-          </grid-vue>
-          <grid-vue size="9">
-            <router-view/>
-          </grid-vue>
-        </div>
-      </div>
-    </main>
-
-    <footer-vue color="blue" logo="Social" description="Rede social" ano="2019">
-      <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-      <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-      <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-      <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
-    </footer-vue>
-  </div>
+  <router-view/>
 </template>
 
 <script>
-import NavBarVue from '@/components/layouts/NavBarVue'
-import FooterVue from '@/components/layouts/FooterVue'
-import GridVue from '@/components/layouts/GridVue'
-import CardMenuVue from '@/components/layouts/CardMenuVue'
-
 export default {
   name: 'App',
   components: {
-    NavBarVue,
-    FooterVue,
-    GridVue,
-    CardMenuVue
   }
 }
 </script>
