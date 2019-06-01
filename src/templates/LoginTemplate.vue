@@ -1,17 +1,20 @@
 <template>
   <div>
     <header>
-      <nav-bar-vue logo="Social" url="#" color="blue"></nav-bar-vue>
+      <nav-bar-vue color="blue" logo="Social" url="#/">
+        <li><a href="#/">Home</a></li>
+        <li><a href="#/login">Login</a></li>
+      </nav-bar-vue>
     </header>
 
     <main>
       <div class="container">
         <div class="row">
-            <grid-vue size="8">
-              <card-menu-vue>
-                <slot name="left"></slot>
-              </card-menu-vue>
-            </grid-vue>
+          <grid-vue size="8">
+            <card-menu-vue>
+              <slot name="left"></slot>
+            </card-menu-vue>
+          </grid-vue>
 
           <grid-vue size="4">
             <slot name="right"></slot>
@@ -20,7 +23,7 @@
       </div>
     </main>
 
-    <footer-vue color="blue" logo="Social" description="Rede social" ano="2019">
+    <footer-vue ano="2019" color="blue" description="Rede social" logo="Social">
       <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
       <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
       <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
