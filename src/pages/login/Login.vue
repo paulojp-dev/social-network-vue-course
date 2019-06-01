@@ -9,14 +9,15 @@
       </span>
 
       <span slot="right">
-        <h2>Login</h2>
+         <h2>Login</h2>
 
-        <label for="loginEmailID">Email</label>
-        <input id="loginEmailID" type="text" placeholder="E-mail" value="" />
-        <label for="loginPasswordID">Password</label>
-        <input id="loginPasswordID" type="password" placeholder="Password" value="" />
+          <label for="loginEmailID">Email</label>
+          <input id="loginEmailID" type="text" placeholder="E-mail" value="" />
+          <label for="loginPasswordID">Password</label>
+          <input id="loginPasswordID" type="password" placeholder="Password" value="" />
 
-        <button class="btn">Sing In</button>
+          <button class="btn">Sing In</button>
+          <router-link class="btn orange" to="/register">Register</router-link>
       </span>
     </login-template>
   </span>
