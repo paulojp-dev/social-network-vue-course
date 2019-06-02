@@ -47,24 +47,38 @@ export default {
         password: this.user.password
       }, {
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          'Cache-Control': 'no-cache'
         }
       }).then(response => {
-        if (response.status === 200) {
+        if (response.status >= 200 && response.data.token) {
           console.log('successfully logged in!')
+          localStorage.setItem('auth', JSON.stringify(response.data))
+        } else if (response.status === 403) {
+          console.log('invalid credentials!')
         } else {
-          console.log('StatusCode ' + response.status + ' not expected')
+          console.log('statusCode ' + response.status + ' not expected')
         }
       }).catch(e => {
+        console.log('99')
         switch (e.response.status) {
           case 423:
-            console.log('Validation error')
+            let errors = ''
+
+            for (let error of Object.values(e.response.data)) {
+              errors += error + ' '
+            }
+
+            alert(errors)
+            break
+          case 403:
+            console.log('invalid credentials!')
             break
           case 500:
             console.log('API internal error')
             break
           default:
-            console.log('StatusCode ' + e.response.status + ' not expected')
+            console.log('statusCode ' + e.response.status + ' not expected')
         }
       })
     }
