@@ -1,10 +1,7 @@
 <template>
   <div>
     <header>
-      <nav-bar-vue logo="Social" url="/" color="blue">
-        <li><router-link to="/">Home</router-link></li>
-        <li><router-link to="/login">Login</router-link></li>
-      </nav-bar-vue>
+      <nav-bar-vue logo="Social" url="/" color="blue"></nav-bar-vue>
     </header>
 
     <main>
@@ -45,6 +42,11 @@ export default {
     FooterVue,
     GridVue,
     CardMenuVue
+  },
+  created () {
+    if (!localStorage.hasOwnProperty('user')) {
+      this.$router.push('/login')
+    }
   }
 }
 </script>

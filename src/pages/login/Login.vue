@@ -16,7 +16,7 @@
           <label for="loginPasswordID">Password</label>
           <input id="loginPasswordID" type="password" placeholder="Password" v-model="user.password" />
 
-          <button class="btn" v-on:click="login">Sing In</button>
+          <button class="btn" v-on:click="login">Login</button>
           <router-link class="btn orange" to="/register">Register</router-link>
       </span>
     </login-template>
@@ -52,23 +52,20 @@ export default {
         }
       }).then(response => {
         if (response.status >= 200 && response.data.token) {
-          console.log('successfully logged in!')
-          localStorage.setItem('auth', JSON.stringify(response.data))
+          localStorage.setItem('user', JSON.stringify(response.data))
+          this.$router.push('/')
         } else if (response.status === 403) {
           console.log('invalid credentials!')
         } else {
           console.log('statusCode ' + response.status + ' not expected')
         }
       }).catch(e => {
-        console.log('99')
         switch (e.response.status) {
           case 423:
             let errors = ''
-
             for (let error of Object.values(e.response.data)) {
               errors += error + ' '
             }
-
             alert(errors)
             break
           case 403:
